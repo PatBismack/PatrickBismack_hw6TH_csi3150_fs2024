@@ -103,7 +103,8 @@ This div contains the start button to begin the quiz.
 #### info_box
 
 This div contains the card which displays the general rules for the quiz and the button to return to the landing page or begin the quiz. It is made of the sub containers info_title to display the title, info_list to display the rules and buttons to display the two buttons.
-`<div class="info_box">
+```
+<div class="info_box">
 
 <div class="info-title"><span>Some Rules of this Quiz</span></div>
 <div class="info-list">
@@ -118,12 +119,14 @@ This div contains the card which displays the general rules for the quiz and the
 <button class="restart">Continue</button>
 </div>
 
-</div>`
+</div>
+```
 
 #### quiz_box
 
 This div contains the card which display each question that is apart of the quiz. It is made of the subsections title, timer, time_line, que_text, option_list, and footer.
-`<div class="quiz_box">
+```
+<div class="quiz_box">
 
 <header>
 <div class="title">Demo Quiz App in JavaScript</div>
@@ -150,7 +153,8 @@ This div contains the card which display each question that is apart of the quiz
         <button class="next_btn">Next Que</button>
     </footer>
 
-</div>`
+</div>
+```
 
 - **title** Contains the name for the quiz
 - **timer** Contains a label for the time left and the inital value of the countdown timer
@@ -162,7 +166,8 @@ This div contains the card which display each question that is apart of the quiz
 #### result_box
 
 Thsi div contains the card which displays the final score and option to replay or exit. It contains subsections for an icon, complete_text, score_text, and buttons.
-`<div class="result_box">
+```
+<div class="result_box">
 
 <div class="icon">
 <i class="fas fa-crown"></i>
@@ -176,7 +181,8 @@ Thsi div contains the card which displays the final score and option to replay o
 <button class="quit">Quit Quiz</button>
 </div>
 
-</div>`
+</div>
+```
 
 - **icon** Contains a logo to display at the end of the quiz
 - **complete_text** Contains a message that the user has completed the quiz
@@ -186,19 +192,21 @@ Thsi div contains the card which displays the final score and option to replay o
 #### style.css
 
 This file acts as the main stylinh for the quiz app.
-`/_ importing google fonts _/
+```
+/_ importing google fonts _/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
-- {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  }`
+  }
+```
+- Reset browser defaults and set the font to Poppins
 
-* Reset browser defaults and set the font to Poppins
-
-`body {
+```
+body {
 background: #a020f0;
 }
 
@@ -236,7 +244,8 @@ border: none;
 border-radius: 5px;
 background: #fff;
 cursor: pointer;
-}`
+}
+```
 
 - Set Backgorund color
 - Set transition for when the user hovers over a button
@@ -244,7 +253,8 @@ cursor: pointer;
 - Control visibility of card content
 - Style font, color, shape and size of the start button
 
-`.info_box {
+```
+.info_box {
 width: 540px;
 background: #fff;
 border-radius: 5px;
@@ -300,14 +310,16 @@ outline: none;
 border-radius: 5px;
 border: 1px solid #a020f0;
 transition: all 0.3s ease;
-}`
+}
+```
 
 - Defines the shape and size of the info card
 - Sets the size, font and positioning of the title
 - Sets the font, color and position of the list elements(rules)
 - Sets the font, shape, size and color of two buttons
 
-`.quiz_box {
+```
+.quiz_box {
 width: 550px;
 background: #fff;
 border-radius: 5px;
@@ -374,13 +386,15 @@ bottom: 0px;
 left: 0px;
 height: 3px;
 background: #a020f0;
-}`
+}
+```
 
 - Defines the shape and size of the quiz card
 - Sets the size, font and positioning of the title
 - Sets the color, size and position of the timer
 
-`section {
+```
+section {
 padding: 25px 30px 20px 30px;
 background: #fff;
 }
@@ -456,7 +470,8 @@ background: #d4edda;
 color: #a42834;
 background: #f8d7da;
 border-color: #a42834;
-}`
+}
+```
 
 - Defines the style for the dynamic content on the quiz card
 - Sets the size, font and positioning of the question
@@ -465,7 +480,8 @@ border-color: #a42834;
 - Disables the ablilty to select an option after one is clicked or timer runs out
 - Sets the size, color, shaoe and transition for check/x logo
 
-`footer {
+```
+footer {
 height: 60px;
 padding: 0 30px;
 display: flex;
@@ -515,14 +531,16 @@ footer button.show {
 opacity: 1;
 pointer-events: auto;
 transform: scale(1);
-}`
+}
+```
 
 - Defines the style for the footer on the quiz card
 - Sets the size, font and positioning of the number of question completed
 - Sets the color, size and position of the continue button
 - Defines the transitions to display the continue button once the question has been answered
 
-`.result_box {
+```
+.result_box {
 background: #fff;
 border-radius: 5px;
 display: flex;
@@ -596,7 +614,8 @@ background: #fff;
 .buttons button.quit:hover {
 color: #fff;
 background: #8604d6;
-}`
+}
+```
 
 - Defines the size, shape, and position for the results card
 - Sets the size and positioning of the crown icon
@@ -607,7 +626,8 @@ background: #8604d6;
 
 This file acts as the main source of data for the quiz app. It is made of an array made up of JavaScript object literals.
 _Object Literal Format_
-`{
+```
+{
     numb: 1,
     question: "Question",
     answer: "Answer",
@@ -617,7 +637,8 @@ _Object Literal Format_
       "Alternative 2",
       "Alternative 3",
     ],
-  }`
+  }
+```
 
 - numb: takes numbers of type integer
   ..\* Note that the numb field should follow numerically order
@@ -628,7 +649,8 @@ _Object Literal Format_
 
 #### QuizApp.js
 
-`// if startQuiz button clicked
+```
+// if startQuiz button clicked
 start_btn.addEventListener("click", (e) => {
 info_box.classList.add("activeInfo"); //show info box
 });
@@ -700,7 +722,8 @@ clearInterval(counter); //clear counter
 clearInterval(counterLine); //clear counterLine
 showResult(); //calling showResult function
 }
-});`
+});
+```
 
 ##### Event Listener
 
@@ -713,7 +736,8 @@ showResult(); //calling showResult function
 
 ##### Functions
 
-`// getting questions and options from array
+```
+// getting questions and options from array
 // If you have lesser or more number of options you need to change this code
 function showQuetions(index) {
 const que_text = document.querySelector(".que_text");
@@ -748,7 +772,8 @@ const option = option_list.querySelectorAll(".option");
 for (i = 0; i < option.length; i++) {
 option[i].setAttribute("onclick", "optionSelected(this)");
 }
-}`
+}
+```
 
 This function takes the index of the question to generate the content for the quiz card
 
@@ -756,7 +781,8 @@ This function takes the index of the question to generate the content for the qu
 - Dynamically generates the cotainer that holds the 4 options
 - Sets their onClick attribute for each option
 
-`// create new div tags for right or wrong tick icons
+```
+// create new div tags for right or wrong tick icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 
@@ -794,7 +820,8 @@ for (i = 0; i < allOptions; i++) {
 option_list.children[i].classList.add("disabled"); //once user select an option, disable all options
 }
 next_btn.classList.add("show"); //show the next button if user selected any option
-}`
+}
+```
 
 This function is responsible for handling when a user selects and option
 
@@ -807,7 +834,8 @@ This function is responsible for handling when a user selects and option
 - Disables all options from being selected
 - Displays the next button
 
-`// display for result box based on user performance
+```
+// display for result box based on user performance
 function showResult() {
   info_box.classList.remove("activeInfo"); //hide info box
   quiz_box.classList.remove("activeQuiz"); //hide quiz box
@@ -842,7 +870,8 @@ function showResult() {
       "</p></span>";
     scoreText.innerHTML = scoreTag;
   }
-}`
+}
+```
 
 - Hide the info and quiz card
 - Get the user score and determines the rank
@@ -851,7 +880,8 @@ function showResult() {
   ..\* If the userScore = 0, displays sorry with score
 - Display the user score
 
-`// control the timer and actions associated to it
+```
+// control the timer and actions associated to it
 function startTimer(time) {
   counter = setInterval(timer, 1000);
   function timer() {
@@ -882,7 +912,8 @@ function startTimer(time) {
       next_btn.classList.add("show"); //show the next button if user selected any option
     }
   }
-}`
+}
+```
 
 - Start the timer and set it's interval to 1 second per tick
 - Update the timer display. If the time < 9 seconds add leading 0s
@@ -893,7 +924,8 @@ function startTimer(time) {
   .._ Disable all options from eing selected
   ..\* Display the next question button
 
-`// Shows a progress bar mirroring timer value left
+```
+// Shows a progress bar mirroring timer value left
 function startTimerLine(time) {
   counterLine = setInterval(timer, 29);
   function timer() {
@@ -904,13 +936,15 @@ function startTimerLine(time) {
       clearInterval(counterLine); //clear counterLine
     }
   }
-}`
+}
+```
 
 - Start progress bar with an interval of 29 milliseconds
 - Update progress bar based on each tick
 - Stop progress bar when time value exceeds 549 milliseconds
 
-`function queCounter(index) {
+```
+function queCounter(index) {
   //creating a new span tag and passing the question number and total question
   let totalQueCounTag =
     "<span><p>" +
@@ -919,7 +953,8 @@ function startTimerLine(time) {
     questions.length +
     "</p> Questions</span>";
   bottom_ques_counter.innerHTML = totalQueCounTag; //adding new span tag inside bottom_ques_counter
-}`
+}
+```
 
 - Create current question number text and total number of questions
 - Update counter display
