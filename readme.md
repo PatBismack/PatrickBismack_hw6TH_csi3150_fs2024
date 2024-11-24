@@ -77,7 +77,8 @@ This file acts as the main HTML file and is responsible for the structure of the
 ##### Metadata
 
 The head section contains the metadata for the application including language, title, and connections to JS and CSS files.
-```<head>
+```
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz App Demo</title>
@@ -91,7 +92,8 @@ The head section contains the metadata for the application including language, t
 
     <!-- Main logic of the app -->
     <script src="js/quizApp.js" defer></script>
-</head>```
+</head>
+```
 
 #### start_btn
 
